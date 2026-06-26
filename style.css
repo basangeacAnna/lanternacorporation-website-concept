@@ -1,0 +1,419 @@
+/* ==========================================================================
+   1. RESET, FONT E PALETTE LUMINOSA (ACCENDIAMO LA LANTERNA)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #fcfaf7;
+    /* Uno sfondo crema/sabbia chiarissimo e caldissimo */
+    color: #00333d;
+    /* Petrolio molto scuro per massima leggibilità del testo */
+    padding-top: 90px;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #00667a;
+    /* Il petrolio del logo */
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.underline {
+    width: 80px;
+    height: 6px;
+    background-color: #00667a;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-subtitle {
+    color: #4c7c87;
+    max-width: 580px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+/* ==========================================================================
+   2. NAVBAR FLUTTUANTE E PULITA
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 15px;
+    left: 5%;
+    width: 90%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Bianco latte semitrasparente */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 102, 122, 0.08);
+    border-radius: 24px;
+    padding: 5px 0;
+    box-shadow: 0 10px 40px rgba(0, 66, 78, 0.06);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+}
+
+.logo img {
+    height: 48px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #00667a;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #cbb49e;
+}
+
+/* Il bottone Merch diventa un elemento di stacco netto */
+.nav-menu a.nav-merch {
+    background: #00667a;
+    color: #ffffff;
+    padding: 9px 20px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 4px 0px #cbb49e;
+    /* Contrasto inverso */
+}
+
+.nav-menu a.nav-merch:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #cbb49e;
+}
+
+/* ==========================================================================
+   3. HERO LUMINOSA CON GRIGLIA A DUE COLONNE (LOGO A DESTRA)
+   ========================================================================== */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 80% 20%, #f1edf7 0%, #fcfaf7 100%);
+    /* Sfocatura di luce sullo sfondo */
+    padding: 40px 0;
+}
+
+.hero-grid-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    /* Spazio asimmetrico per testo e logo */
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: left;
+}
+
+.badge {
+    background: rgba(0, 102, 122, 0.08);
+    color: #00667a;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 102, 122, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 4.4rem;
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    color: #00333d;
+}
+
+.text-gradient {
+    color: #00667a;
+    background: linear-gradient(135deg, #00667a 0%, #4c7c87 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #4c7c87;
+    max-width: 580px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* CONTENITORE PER IL LOGO GIGANTE A DESTRA */
+.hero-logo-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatingLogo 6s ease-in-out infinite;
+    /* Movimento leggero e vivo */
+}
+
+.hero-logo-large img {
+    width: 100%;
+    max-width: 380px;
+    /* Dimensione imponente */
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 66, 78, 0.12));
+}
+
+@keyframes floatingLogo {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* BOTTONI EDITORIALI */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #00667a;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 102, 122, 0.15);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #004d5c;
+    box-shadow: 0 8px 25px rgba(0, 102, 122, 0.25);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #00667a;
+    border: 2px solid #00667a;
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 102, 122, 0.05);
+}
+
+/* ==========================================================================
+   4. SEZIONI E CARDS MORBIDE SUL CHIARO
+   ========================================================================== */
+.content-section {
+    padding: 120px 0;
+}
+
+.bg-light {
+    background-color: #f3eff2;
+    /* Un contrasto leggermente rosato/crema per rompere la pagina */
+    border-radius: 40px;
+    margin: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 40px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+/* Card bianche che staccano dallo sfondo crema */
+.card {
+    background: #ffffff;
+    padding: 45px 35px;
+    border-radius: 28px;
+    border: 1px solid rgba(0, 102, 122, 0.05);
+    box-shadow: 0 15px 40px rgba(0, 66, 78, 0.04);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 25px 50px rgba(0, 66, 78, 0.08);
+}
+
+/* Evidenziamo la card centrale col colore del brand */
+.grid-3 .card:nth-child(2) {
+    background: #00667a;
+}
+
+.grid-3 .card:nth-child(2) h3,
+.grid-3 .card:nth-child(2) p {
+    color: white;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #00333d;
+}
+
+.card p {
+    color: #4c7c87;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* REPARTO GALLERY */
+.campaign-box {
+    background: #ffffff;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 66, 78, 0.05);
+    border: 1px solid rgba(0, 102, 122, 0.03);
+}
+
+.campaign-img-placeholder {
+    background: #e9e3db;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00667a;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.campaign-details {
+    padding: 35px;
+}
+
+/* BOX CANDIDATURA IN BASSO - SPINGE SUL RIGUARDO VISIVO */
+.join-box {
+    background: #00667a;
+    color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 36px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 102, 122, 0.25);
+}
+
+.join-box h3 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: white;
+    letter-spacing: -1px;
+}
+
+.join-box p {
+    color: #eef7f9;
+    margin-bottom: 35px;
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.join-box .btn-primary {
+    background: #fcfaf7;
+    color: #00667a;
+    box-shadow: none;
+}
+
+.join-box .btn-primary:hover {
+    background: #ffffff;
+    color: #00333d;
+}
+
+/* ==========================================================================
+   5. FOOTER CHIARO ED ELEGANTE
+   ========================================================================== */
+.main-footer {
+    background: #f4eff0;
+    padding: 80px 0 30px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(0, 102, 122, 0.08);
+}
+
+.main-footer h4 {
+    font-size: 1.2rem;
+    color: #00333d;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.main-footer p {
+    color: #4c7c87;
+    line-height: 2;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    color: #7fa1a8;
+    font-weight: 500;
+    border-top: 1px solid rgba(0, 102, 122, 0.04);
+    margin-top: 40px;
+}
