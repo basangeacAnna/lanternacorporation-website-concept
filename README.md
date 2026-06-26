@@ -1,7 +1,7 @@
 # Lanterna Corporation - Web Concept 🚀✨
 > *"Dove le persone fanno la differenza, ogni giorno."*
 
-Questo repository ospita un **concept statico e sperimentale** per una proposta di restyling del sito web di **Lanterna Corporation**.
+Questo repository ospita un **concept statico e non ufficiale** per una proposta di restyling del sito web di **Lanterna Corporation**.
 Visto che in azienda ognuno ci mette il suo con skill diverse, ho pensato di usare le mie giornate passate a programmare per buttare giù questa bozza statica. 
 
 Niente di ufficiale e zero pretese: è solo un concept per ridisegnare il sito, nato per fare un pensiero a un team e a dei capi pazzeschi con cui si sta da dio. 
