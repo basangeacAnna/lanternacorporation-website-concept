@@ -1250,42 +1250,37 @@ h2 {
 }
 
 .footer-logo-wrapper {
-    width: 160px;
-    height: 160px;
+    width: 120px;          /* Ridotto un po' il cerchio rispetto a prima per proporzione */
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;   /* Spazio tra il cerchio e le icone social */
 }
 
+/* 2. L'IMMAGINE DEL LOGO (Deve riempire il cerchio!) */
+.footer-logo-wrapper img,
 .footer-logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 85% !important;   /* Forza l'immagine a occupare quasi tutto il cerchio bianco */
+    height: 85% !important;
+    max-width: 85% !important;
+    max-height: 85% !important;
+    object-fit: contain;     /* Mantiene le proporzioni del logo senza tagliarlo */
+    display: block;
 }
 
-.footer-social-links {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-}
 
-.footer-social-links a {
-    color: #ffffff;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+.footer-social-links .footer-social-icon {
+    width: 28px !important;
+    height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+    object-fit: contain;
     display: inline-block;
-}
-
-.footer-social-links a:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
-}
-
-.footer-social-links svg {
-    width: 28px;  /* Da 24px a 28px: un pelo più grandi e visibili */
-    height: 28px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* COLONNA DESTRA: TESTI E NAV */
@@ -1382,4 +1377,183 @@ h2 {
         justify-content: center;
         gap: 15px;
     }
+}
+
+/* Rimuove i trattini di sottolineatura dai link delle icone social */
+.footer-social-links a {
+    text-decoration: none !important;
+    display: inline-block; /* Aiuta a isolare l'immagine eliminando spazi di testo fantasma */
+}
+
+/* ==========================================================================
+   ESTENSIONE LAYOUT SHOP MERCHANDISING
+   ========================================================================== */
+.merch-shop-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Griglia asimmetrica e fluida che si rompe da sola su mobile */
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+/* La scheda del singolo prodotto */
+.merch-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 51, 61, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.merch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 51, 61, 0.07);
+}
+
+/* Contenitore Immagine con segnaposto */
+.merch-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background-color: #eae6df; /* Tono neutro ed elegante */
+    overflow: hidden;
+}
+
+/* Il rettangolo che vedi adesso prima di mettere le foto vere */
+.merch-placeholder-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.merch-placeholder-img span {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #4c7c87;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* Se deciderai di metterci un tag img reale, questo lo gestirà da dio */
+.merch-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.5s ease;
+}
+
+.merch-card:hover .merch-img-wrapper img {
+    scale: 1.05;
+}
+
+/* Badge (New entry / Best seller) molto minimalisti */
+.merch-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #00333d;
+    color: #fcfaf7;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+.item-sold-out {
+    background-color: #888888;
+}
+
+/* Dettagli testo sotto la foto */
+.merch-details {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.merch-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #cbb49e;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.merch-product-title {
+    font-size: 1.25rem;
+    color: #00333d;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.merch-price {
+    font-size: 1.35rem;
+    color: #00667a;
+    font-weight: 800;
+    margin-top: auto; /* Spinge il prezzo sempre in fondo sopra al bottone */
+}
+
+/* ==========================================================================
+   CAROSELLO CSS NATIVO PER FRONTE/RETRO PRODOTTI
+   ========================================================================== */
+.css-carousel {
+    overflow-x: auto !important; /* Abilita lo scroll orizzontale */
+    scroll-snap-type: x mandatory; /* Effetto calamita: si blocca sulla foto */
+    scroll-behavior: smooth;
+}
+
+/* Nascondiamo la barra di scorrimento brutta per un look pulito */
+.css-carousel::-webkit-scrollbar {
+    display: none;
+}
+.css-carousel {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+/* Il binario interno che tiene le foto affiancate */
+.carousel-track {
+    display: flex;
+    width: 200%; /* Avendo due immagini, il binario è largo il doppio */
+    height: 100%;
+}
+
+/* Adattiamo le immagini del carosello */
+.css-carousel .merch-product-img {
+    width: 50% !important; /* Ogni immagine prende esattamente metà del binario (cioè tutta la card) */
+    flex-shrink: 0;
+    scroll-snap-align: start; /* Dice dove agganciarsi con la calamita dello scroll */
+}
+
+/* Micro scritta di suggerimento in fondo alla foto */
+.carousel-hint {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    background-color: rgba(0, 51, 61, 0.6);
+    color: #ffffff;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    font-weight: 600;
 }
