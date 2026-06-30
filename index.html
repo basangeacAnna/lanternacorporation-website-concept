@@ -16,23 +16,26 @@
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/logoLanterna.png" alt="Lanterna Corporation Logo">
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About us</a></li>
-                <li><a href="#cosa-offriamo">Cosa ti offriamo </a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contatti">Contatti</a></li>
-                <li><a href="merch.html" class="nav-merch">Merch 👕</a></li>
-            </ul>
-        </div>
-    </nav>
+   <nav class="navbar">
+    <a href="#" class="nav-logo">Logo</a>
+
+    <!-- Il bottone hamburger che abbiamo inserito prima -->
+    <button class="hamburger" aria-label="Apri menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- ASSICURATI DI AVERE QUESTA CLASSE "nav-links" QUI SOTTO -->
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#staff">Staff</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#" class="candidati-btn">CANDIDATI ORA</a></li>
+    </ul>
+</nav>
 
     <!-- HOME (HERO SECTION LUMINOSA) -->
     <section id="home" class="hero-section">
@@ -471,6 +474,29 @@
         </div>
     </footer>
 
+
+    
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        // Aggiunge o toglie la classe "active" all'hamburger per fare la "X"
+        hamburger.classList.toggle('active');
+        // Aggiunge o toglie la classe "active" ai link per far apparire il menu
+        navLinks.classList.toggle('active');
+    });
+
+    // Opzionale: Chiude il menu se clicchi su un link qualsiasi
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+</script>
 </body>
+
+
 
 </html>
