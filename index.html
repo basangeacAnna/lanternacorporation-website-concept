@@ -17,7 +17,7 @@
 <body>
 
    <nav class="navbar">
-    <a href="#" class="nav-logo">Logo</a>
+                <img href="#home" src="assets/loghi/logoLanterna.png" class="nav-logo"  alt="Lanterna Corporation Logo">
 
     <!-- Il bottone hamburger che abbiamo inserito prima -->
     <button class="hamburger" aria-label="Apri menu">
@@ -29,11 +29,11 @@
     <!-- ASSICURATI DI AVERE QUESTA CLASSE "nav-links" QUI SOTTO -->
     <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About us</a></li>
-        <li><a href="#staff">Staff</a></li>
+        <li><a href="#about-us">About us</a></li>
+        <li><a href="#team">Staff</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contatti">Contatti</a></li>
-        <li><a href="#" class="candidati-btn">CANDIDATI ORA</a></li>
+        <li><a href="candidati.html" class="candidati-btn">CANDIDATI ORA</a></li>
     </ul>
 </nav>
 
@@ -41,7 +41,6 @@
     <section id="home" class="hero-section">
         <div class="container hero-grid-layout">
             <div class="hero-content">
-                <span class="badge">Concept by CaloDiPressione 💜</span>
                 <h1>Dove le persone fanno la <span class="text-gradient">differenza</span></h1>
                 <p>Siamo una società di <b>Direct Marketing </b> specializzata nella promozione di Brand di fama
                     nazionale e
@@ -56,7 +55,7 @@
             </div>
             <!-- Il logo grande che accende la sezione destra -->
             <div class="hero-logo-large">
-                <img src="assets/logoLanterna.png" alt="Lanterna Corporation Big Logo">
+                <img src="assets/loghi/logoLanterna.png" alt="Lanterna Corporation Big Logo">
             </div>
         </div>
     </section>
@@ -143,45 +142,32 @@
     </section>
 
     <!-- SEZIONE COSA TI OFFRIAMO -->
-    <section id="cosa-offriamo" class="offriamo-section" style="padding: 60px 0; text-align: center;">
-        <h2 class="section-title" style="color: #00333d; font-size: 2rem; margin-bottom: 40px;">Cosa ti offriamo</h2>
+    <section id="cosa-offriamo" class="offriamo-section">
+        <h2 class="section-title">Cosa ti offriamo</h2>
 
-        <div class="offriamo-grid"
-            style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; max-width: 1140px; margin: 0 auto; padding: 0 24px; padding-bottom: 30px  ;">
+        <div class="offriamo-grid">
 
             <!-- Elemento 1: Formazione continua -->
-            <div class="offriamo-item"
-                style="flex: 1; min-width: 250px; max-width: 300px; display: flex; flex-direction: column; align-items: center;">
-                <h3 style="color: #005566; font-size: 1.2rem; margin-bottom: 20px; font-weight: 600;">Formazione
-                    continua</h3>
-                <div class="offriamo-img-wrapper"
-                    style="width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;">
-                    <img src="assets/formazione.png" alt="Formazione Continua"
-                        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            <div class="offriamo-item">
+                <h3>Formazione continua</h3>
+                <div class="offriamo-img-wrapper">
+                    <img src="assets/formazione.png" alt="Formazione Continua">
                 </div>
             </div>
 
             <!-- Elemento 2: Possibilità di viaggiare -->
-            <div class="offriamo-item"
-                style="flex: 1; min-width: 250px; max-width: 300px; display: flex; flex-direction: column; align-items: center;">
-                <h3 style="color: #005566; font-size: 1.2rem; margin-bottom: 20px; font-weight: 600;">Possibilità di
-                    viaggiare</h3>
-                <div class="offriamo-img-wrapper"
-                    style="width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;">
-                    <img src="assets/viaggiImg.png" alt="Possibilità di viaggiare"
-                        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            <div class="offriamo-item">
+                <h3>Possibilità di viaggiare</h3>
+                <div class="offriamo-img-wrapper">
+                    <img src="assets/viaggiImg.png" alt="Possibilità di viaggiare">
                 </div>
             </div>
 
             <!-- Elemento 3: Lavoro in team -->
-            <div class="offriamo-item"
-                style="flex: 1; min-width: 250px; max-width: 300px; display: flex; flex-direction: column; align-items: center;">
-                <h3 style="color: #005566; font-size: 1.2rem; margin-bottom: 20px; font-weight: 600;">Lavoro in team
-                </h3>
-                <div class="offriamo-img-wrapper"
-                    style="width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;">
-                    <img src="assets/teamwork.png" alt="Lavoro in Team"
-                        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            <div class="offriamo-item">
+                <h3>Lavoro in team</h3>
+                <div class="offriamo-img-wrapper">
+                    <img src="assets/teamwork.png" alt="Lavoro in Team">
                 </div>
             </div>
 
@@ -329,27 +315,7 @@
                 <h2 class="contact-giant-title">Vuoi iniziare il tuo percorso?</h2>
                 <p class="contact-lead-text">Compila il form e fatti conoscere dal Team. Ti aspettiamo!</p>
 
-                <div class="reach-us-block">
-                    <h3>Come puoi raggiungerci?</h3>
-
-                    <div class="transport-group">
-                        <span class="transport-type">Metropolitana</span>
-                        <p><strong>Linea M1 (Rossa)</strong> — fermata Loreto</p>
-                        <p><strong>Linea M2 (Verde)</strong> — fermata Loreto</p>
-                    </div>
-
-                    <div class="transport-group">
-                        <span class="transport-type">Autobus</span>
-                        <p><strong>Linea 39</strong> — Fermata Loreto M1 M2</p>
-                        <p><strong>Linee 90 e 91</strong> — Fermata P.le Loreto / Via Pergolesi</p>
-                        <p><strong>Linea 62</strong> — Fermata Viale Abruzzi</p>
-                    </div>
-
-                    <div class="transport-group">
-                        <span class="transport-type">Tram</span>
-                        <p><strong>Linea 1</strong> — Fermata Caiazzo M2</p>
-                    </div>
-                </div>
+                
             </div>
 
             <div class="contact-form-side">
@@ -388,8 +354,29 @@
 
         </div>
 
-        <<!-- Mappa a tutta larghezza ma integrata con grazia alla fine -->
-            <div class="map-wrapper-minimal">
+        <div class="reach-us-block">
+                    <h3>Come puoi raggiungerci?</h3>
+
+                    <div class="transport-group">
+                        <span class="transport-type">Metropolitana</span>
+                        <p><strong>Linea M1 (Rossa)</strong> — fermata Loreto</p>
+                        <p><strong>Linea M2 (Verde)</strong> — fermata Loreto</p>
+                    </div>
+
+                    <div class="transport-group">
+                        <span class="transport-type">Autobus</span>
+                        <p><strong>Linea 39</strong> — Fermata Loreto M1 M2</p>
+                        <p><strong>Linee 90 e 91</strong> — Fermata P.le Loreto / Via Pergolesi</p>
+                        <p><strong>Linea 62</strong> — Fermata Viale Abruzzi</p>
+                    </div>
+
+                    <div class="transport-group">
+                        <span class="transport-type">Tram</span>
+                        <p><strong>Linea 1</strong> — Fermata Caiazzo M2</p>
+                    </div>
+                </div>
+        <!-- Mappa a tutta larghezza ma integrata con grazia alla fine -->
+        <div class="map-wrapper-minimal">
                 <div class="map-overlay-card">
                     <p>Lanterna Corporation</p>
                     <span>Milano, Zona Loreto</span>
@@ -453,10 +440,11 @@
 
                 <nav class="footer-nav">
                     <a href="#home">Home</a>
-                    <a href="#about">About us</a>
-                    <a href="#staff">Staff</a>
+                    <a href="#about-us">About us</a>
+                    <a href="#team">Staff</a>
                     <a href="#gallery">Gallery</a>
                     <a href="#contatti">Contatti</a>
+                    <a href="candidati.html">Candidati</a>
                 </nav>
             </div>
 
