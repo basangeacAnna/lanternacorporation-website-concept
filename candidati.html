@@ -18,6 +18,9 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
+        <a href="index.html" class="nav-logo-small">
+            <img src="assets/logoLanterna.png" alt="Lanterna Corporation Logo" class="logo-nav">
+        </a>
         <a href="index.html" class="nav-logo">Logo</a>
 
         <!-- Il bottone hamburger per mobile -->
@@ -36,16 +39,6 @@
             <li><a href="candidati.html" class="candidati-btn">CANDIDATI ORA</a></li>
         </ul>
     </nav>
-
-    <!-- HERO SECTION CANDIDATI -->
-    <section class="candidati-hero">
-        <div class="candidati-hero-content">
-            <span class="badge">Unisciti al Team</span>
-            <h1>Dove le persone fanno la <span class="text-gradient">differenza</span></h1>
-            <p>Cerchiamo professionisti appassionati che vogliono crescere con noi nel mondo del Direct Marketing.
-                Se pensi di essere la persona giusta, contattaci!</p>
-        </div>
-    </section>
 
     <!-- SEZIONE FORM CANDIDATURA -->
     <section class="candidati-form-section">
@@ -113,7 +106,13 @@
                         <label for="messaggio">Raccontaci di te e perché vuoi candidarti (richiesto)</label>
                     </div>
 
-                    <!-- ROW 6: Checkbox consenso -->
+                    <!-- ROW 6: Allega il tuo CV -->
+                    <div class="form-field full-width">
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required placeholder=" ">
+                        <label for="cv">Allega il tuo CV (richiesto)</label>
+                    </div>
+
+                    <!-- ROW 7: Checkbox consenso -->
                     <div class="form-checkbox">
                         <input type="checkbox" id="consenso" name="consenso" required>
                         <label for="consenso">Accetto di essere contattato per questa opportunità di lavoro</label>

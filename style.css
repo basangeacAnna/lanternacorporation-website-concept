@@ -17,7 +17,7 @@ body {
     /* Uno sfondo crema/sabbia chiarissimo e caldissimo */
     color: #00333d;
     /* Petrolio molto scuro per massima leggibilità del testo */
-    padding-top: 90px;
+    padding-top: 50px;
     overflow-x: hidden;
 }
 
@@ -63,7 +63,7 @@ h2 {
    ========================================================================== */
 .navbar {
     position: fixed;
-    top: 15px;
+    top: 5px;
     left: 5%;
     width: 90%;
     z-index: 1000;
@@ -75,6 +75,10 @@ h2 {
     border-radius: 24px;
     padding: 5px 0;
     box-shadow: 0 10px 40px rgba(0, 66, 78, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
 }
 
 .nav-container {
@@ -82,6 +86,29 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 10px 24px;
+}
+
+.nav-logo-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-nav {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-nav:hover {
+    transform: scale(1.1);
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: #00667a;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 .logo img {
@@ -114,7 +141,7 @@ h2 {
     color: #ffffff;
     padding: 9px 20px;
     border-radius: 16px;
-    font-weight: 00;
+    font-weight: 600;
     box-shadow: 0 4px 0px #cbb49e;
     /* Contrasto inverso */
 }
@@ -122,6 +149,23 @@ h2 {
 .nav-menu a.nav-merch:hover {
     transform: translateY(2px);
     box-shadow: 0 2px 0px #cbb49e;
+}
+
+/* Stile per il bottone candidati in navbar */
+.nav-links a.candidati-btn {
+    background: #0080a0;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 4px 0px #00667a;
+    transition: all 0.2s ease;
+}
+
+.nav-links a.candidati-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #00667a;
+    color: #ffffff;
 }
 
 /* ==========================================================================
@@ -983,7 +1027,9 @@ h2 {
 
 /* L'input diventa una linea pulita invece di un box */
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select,
+.form-field input[type="file"] {
     width: 100%;
     padding: 12px 0;
     background: transparent;
@@ -993,6 +1039,28 @@ h2 {
     color: #00333d;
     outline: none;
     transition: border-color 0.3s ease;
+}
+
+.form-field input[type="file"] {
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.form-field input[type="file"]::file-selector-button {
+    background-color: #00667a;
+    color: #fcfaf7;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-right: 12px;
+}
+
+.form-field input[type="file"]::file-selector-button:hover {
+    background-color: #00333d;
 }
 
 .form-field textarea {
@@ -1012,7 +1080,9 @@ h2 {
 
 /* Animazione magica del focus del form */
 .form-field input:focus,
-.form-field textarea:focus {
+.form-field textarea:focus,
+.form-field select:focus,
+.form-field input[type="file"]:focus {
     border-bottom-color: #00667a;
 }
 
@@ -1020,7 +1090,9 @@ h2 {
 .form-field input:focus ~ label,
 .form-field input:not(:placeholder-shown) ~ label,
 .form-field textarea:focus ~ label,
-.form-field textarea:not(:placeholder-shown) ~ label {
+.form-field textarea:not(:placeholder-shown) ~ label,
+.form-field select:focus ~ label,
+.form-field input[type="file"]:focus ~ label {
     top: -18px;
     font-size: 0.9rem;
     color: #00667a;
@@ -1701,6 +1773,23 @@ h2 {
     }
     .hamburger.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Logo piccolo responsive */
+    .nav-logo-small {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: auto;
+    }
+
+    .logo-nav {
+        height: 35px;
+        width: auto;
+    }
+
+    .nav-logo {
+        display: none;
     }
 }
 
