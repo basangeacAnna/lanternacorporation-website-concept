@@ -184,7 +184,7 @@ h2 {
 }
 
 .nav-links a.candidati-btn {
-    background: #1caad8;
+    background: #00667a;
     color: #ffffff;
     padding: 10px 22px;
     border-radius: 16px;
@@ -2139,6 +2139,15 @@ h2 {
         padding: 10px 12px;
     }
 
+    .nav-logo-small {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-nav {
+        height: 32px;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -2176,6 +2185,50 @@ h2 {
         width: auto;
         text-align: center;
         margin-top: 0.2rem;
+    }
+
+    .hero-section {
+        padding-top: 110px;
+    }
+
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hero-logo-large {
+        order: -1;
+        margin: 0 auto 4px;
+        width: min(270px, 72vw);
+    }
+
+    .hero-logo-large img {
+        max-width: 100%;
+    }
+
+    .hero-content {
+        text-align: left;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(3.1rem, 15vw, 5rem);
+        line-height: 0.96;
+    }
+
+    .hero-content p {
+        font-size: 1.12rem;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
     }
 
     .hamburger.active span:nth-child(1) {
