@@ -9,18 +9,28 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 96px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
 }
 
 body {
     background-color: #fcfaf7;
-    /* Uno sfondo crema/sabbia chiarissimo e caldissimo */
     color: #00333d;
-    /* Petrolio molto scuro per massima leggibilità del testo */
-    padding-top: 90px;
+    padding-top: 0;
     overflow-x: hidden;
     width: 100%;
+}
+
+section,
+.content-section,
+.about-minimal-section,
+.offriamo-section,
+.gallery-section,
+.contact-minimal-section,
+.candidati-form-section {
+    padding-top: 40px;
+    padding-bottom: 56px;
 }
 
 .container {
@@ -65,18 +75,22 @@ h2 {
    ========================================================================== */
 .navbar {
     position: fixed;
-    top: 15px;
-    left: 5%;
-    width: 90%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1180px, calc(100% - 24px));
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Bianco latte semitrasparente */
+    background-color: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 102, 122, 0.08);
-    border-radius: 24px;
-    padding: 5px 0;
-    box-shadow: 0 10px 40px rgba(0, 66, 78, 0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 66, 78, 0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    margin: 0;
 }
 
 .nav-container {
@@ -84,6 +98,33 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 10px 24px;
+}
+
+.nav-logo-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+}
+
+.logo-nav {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo-nav:hover {
+    transform: scale(1.08);
+}
+
+.nav-logo {
+    text-decoration: none;
+    color: #00667a;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 .logo img {
@@ -116,7 +157,7 @@ h2 {
     color: #ffffff;
     padding: 9px 20px;
     border-radius: 16px;
-    font-weight: 00;
+    font-weight: 600;
     box-shadow: 0 4px 0px #cbb49e;
     /* Contrasto inverso */
 }
@@ -124,6 +165,64 @@ h2 {
 .nav-menu a.nav-merch:hover {
     transform: translateY(2px);
     box-shadow: 0 2px 0px #cbb49e;
+}
+
+/* Stile per il bottone candidati in navbar */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #00333d;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+}
+
+.nav-links a.candidati-btn {
+    background: #00667a;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 16px;
+    font-weight: 700;
+    box-shadow: 0 4px 0px rgba(38, 117, 141, 0.7);
+    transition: all 0.2s ease;
+}
+
+.nav-links a.candidati-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px rgba(38, 117, 141, 0.7);
+    color: #ffffff;
+    background: #14a0d3;
+}
+
+.hamburger {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: #00333d;
+    border-radius: 999px;
+    transition: all 0.25s ease;
 }
 
 /* ==========================================================================
@@ -134,8 +233,7 @@ h2 {
     display: flex;
     align-items: center;
     background: radial-gradient(circle at 80% 20%, #f1edf7 0%, #fcfaf7 100%);
-    /* Sfocatura di luce sullo sfondo */
-    padding: 40px 0;
+    padding: 92px 0 60px;
 }
 
 .hero-grid-layout {
@@ -176,7 +274,6 @@ h2 {
 .text-gradient {
     color: #00667a;
     background: linear-gradient(135deg, #00667a 0%, #4c7c87 100%);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -299,8 +396,7 @@ h2 {
    4. SEZIONI E CARDS MORBIDE SUL CHIARO
    ========================================================================== */
 .content-section {
-    padding: 50px, 0;
-   
+    padding: 50px 0;
 }
 
 .bg-light {
@@ -371,7 +467,7 @@ h2 {
    GALLERY: CAROSELLO ORIZZONTALE AUTOMATICO E INFINITO
    ========================================================================== */
 .gallery-section {
-    padding: 100px 0 140px 0;
+    padding: 82px 0 100px 0;
     background-color: #fcfaf7; /* Mantiene lo sfondo caldo e accogliente */
     overflow: hidden; /* Fondamentale: nasconde le foto che escono dallo schermo */
 }
@@ -722,15 +818,7 @@ h2 {
 }
 
 .about-lead {
-    font-size: 1.35rem;
-    color: #4c7c87;
-    line-height: 1.6;
-    max-width: 750px;
-    font-weight: 400;
-}
-
-.about-lead {
-    font-size: 1.55rem; /* Prima era 1.35rem - Ora riempie benissimo lo spazio */
+    font-size: 1.55rem;
     color: #4c7c87;
     line-height: 1.6;
     max-width: 850px;
@@ -845,16 +933,9 @@ h2 {
     margin: 0 auto;
 }
 
-.value-word {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #00333d;
-    transition: color 0.3s ease;
-}
-
 /* Le parole dei valori in fondo */
 .value-word {
-    font-size: 2.2rem; /* Prima era 1.8rem - Ora saltano subito all'occhio */
+    font-size: 2.2rem;
     font-weight: 800;
     color: #00333d;
     transition: color 0.3s ease;
@@ -882,9 +963,9 @@ h2 {
    SEZIONE OWNER: LAYOUT AVVOLGENTE (IL TESTO VA SOTTO LA FOTO)
    ========================================================================== */
 .owner-section-fluid {
-    margin-top: 140px;
-    padding-top: 80px;
-    padding-bottom: 160px; 
+    margin-top: 76px;
+    padding-top: 72px;
+    padding-bottom: 90px; 
     border-top: 1px solid rgba(0, 102, 122, 0.1);
     text-align: left;
     position: relative;
@@ -1006,7 +1087,7 @@ h2 {
    SEZIONE CONTATTI: STILE INTERNAZIONALE MINIMALE
    ========================================================================== */
 .contact-minimal-section {
-    padding: 140px 0 0 0; /* Zero sotto perché si chiude con la mappa fluida */
+    padding: 82px 0 0 0; /* Zero sotto perché si chiude con la mappa fluida */
     background-color: #fcfaf7;
 }
 
@@ -1094,7 +1175,9 @@ h2 {
 
 /* L'input diventa una linea pulita invece di un box */
 .form-field input,
-.form-field textarea {
+.form-field textarea,
+.form-field select,
+.form-field input[type="file"] {
     width: 100%;
     padding: 12px 0;
     background: transparent;
@@ -1104,6 +1187,28 @@ h2 {
     color: #00333d;
     outline: none;
     transition: border-color 0.3s ease;
+}
+
+.form-field input[type="file"] {
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.form-field input[type="file"]::file-selector-button {
+    background-color: #00667a;
+    color: #fcfaf7;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-right: 12px;
+}
+
+.form-field input[type="file"]::file-selector-button:hover {
+    background-color: #00333d;
 }
 
 .form-field textarea {
@@ -1123,7 +1228,9 @@ h2 {
 
 /* Animazione magica del focus del form */
 .form-field input:focus,
-.form-field textarea:focus {
+.form-field textarea:focus,
+.form-field select:focus,
+.form-field input[type="file"]:focus {
     border-bottom-color: #00667a;
 }
 
@@ -1131,7 +1238,9 @@ h2 {
 .form-field input:focus ~ label,
 .form-field input:not(:placeholder-shown) ~ label,
 .form-field textarea:focus ~ label,
-.form-field textarea:not(:placeholder-shown) ~ label {
+.form-field textarea:not(:placeholder-shown) ~ label,
+.form-field select:focus ~ label,
+.form-field input[type="file"]:focus ~ label {
     top: -18px;
     font-size: 0.9rem;
     color: #00667a;
@@ -1812,5 +1921,419 @@ h2 {
     }
     .hamburger.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Logo piccolo responsive */
+    .nav-logo-small {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: auto;
+    }
+
+    .logo-nav {
+        height: 35px;
+        width: auto;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   PAGINA CANDIDATI: HERO + FORM
+   ========================================================================== */
+
+.candidati-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 80% 20%, #f1edf7 0%, #fcfaf7 100%);
+    padding: 40px 0;
+}
+
+.candidati-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    text-align: left;
+}
+
+.candidati-hero-content h1 {
+    font-size: 4.4rem;
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+    color: #00333d;
+}
+
+.candidati-hero-content p {
+    font-size: 1.25rem;
+    color: #4c7c87;
+    max-width: 580px;
+    line-height: 1.6;
+}
+
+/* Sezione Form Candidati */
+.candidati-form-section {
+    padding: 100px 0;
+    background-color: #fcfaf7;
+}
+
+.candidati-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.form-header h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: #00667a;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.form-header p {
+    font-size: 1.2rem;
+    color: #4c7c87;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.form-wrapper {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 102, 122, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 66, 78, 0.03);
+}
+
+.candidati-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-field {
+    position: relative;
+    width: 100%;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0, 51, 61, 0.15);
+    font-size: 1.15rem;
+    color: #00333d;
+    outline: none;
+    transition: border-color 0.3s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.form-field textarea {
+    resize: none;
+    padding: 12px 0;
+}
+
+.form-field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0px center;
+    background-size: 24px;
+    padding-right: 35px;
+}
+
+.form-field label {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    font-size: 1.15rem;
+    color: #4c7c87;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+    border-bottom-color: #00667a;
+}
+
+.form-field input:focus ~ label,
+.form-field input:not(:placeholder-shown) ~ label,
+.form-field textarea:focus ~ label,
+.form-field textarea:not(:placeholder-shown) ~ label,
+.form-field select:focus ~ label,
+.form-field select:not(:placeholder-shown) ~ label {
+    top: -20px;
+    font-size: 0.9rem;
+    color: #00667a;
+    font-weight: 700;
+}
+
+.form-field.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.form-checkbox input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    margin-top: 3px;
+    cursor: pointer;
+    accent-color: #00667a;
+}
+
+.form-checkbox label {
+    font-size: 1rem;
+    color: #4c7c87;
+    line-height: 1.4;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+.candidati-submit-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #00333d;
+    color: #fcfaf7;
+    border: none;
+    padding: 18px 42px;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.candidati-submit-btn:hover {
+    background-color: #00667a;
+    transform: translateY(-2px);
+}
+
+.form-message {
+    text-align: center;
+    padding: 20px;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.form-message.loading {
+    background-color: #cfe2ff;
+    color: #084298;
+    border: 1px solid #b6d4fe;
+}
+
+/* Responsive per tablet e mobile */
+@media (max-width: 768px) {
+    .candidati-hero-content h1 {
+        font-size: 2.6rem;
+    }
+
+    .candidati-hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .form-header h2 {
+        font-size: 2.4rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .candidati-form {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .candidati-hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-header p {
+        font-size: 1rem;
+    }
+
+    .form-wrapper {
+        padding: 20px 16px;
+    }
+
+    .form-field label {
+        font-size: 1rem;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        top: 8px;
+        width: calc(100% - 16px);
+        padding: 10px 12px;
+    }
+
+    .nav-logo-small {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-nav {
+        height: 32px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.97);
+        border: 1px solid rgba(0, 102, 122, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 16px 32px rgba(0, 51, 61, 0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 0.8rem;
+        font-size: 1rem;
+        border-radius: 12px;
+    }
+
+    .nav-links a.candidati-btn {
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        margin-top: 0.2rem;
+    }
+
+    .hero-section {
+        padding-top: 110px;
+    }
+
+    .hero-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hero-logo-large {
+        order: -1;
+        margin: 0 auto 4px;
+        width: min(270px, 72vw);
+    }
+
+    .hero-logo-large img {
+        max-width: 100%;
+    }
+
+    .hero-content {
+        text-align: left;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(3.1rem, 15vw, 5rem);
+        line-height: 0.96;
+    }
+
+    .hero-content p {
+        font-size: 1.12rem;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
 }
