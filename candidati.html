@@ -220,48 +220,48 @@
         });
     </script>
 
-    <!-- EmailJS per inviare il form -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <!-- Script per inviare il form via mailto all'indirizzo aziendale -->
     <script type="text/javascript">
-        // Inizializza EmailJS (registrati gratuitamente su emailjs.com)
-        emailjs.init('SERVICE_ID_PLACEHOLDER'); // Sostituisci con il tuo Service ID
+        const form = document.getElementById('candidatiForm');
 
-        // Gestisci il submit del form
-        document.getElementById('candidatiForm').addEventListener('submit', function (e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Raccogli i dati del form
-            const formData = {
-                nome: document.getElementById('nome').value,
-                cognome: document.getElementById('cognome').value,
-                email: document.getElementById('email').value,
-                telefono: document.getElementById('telefono').value,
-                citta: document.getElementById('citta').value,
-                nascita: document.getElementById('nascita').value,
-                esperienza: document.getElementById('esperienza').value,
-                messaggio: document.getElementById('messaggio').value,
-                recipient_email: 'info@lanternacorporation.com'
-            };
+            const nome = document.getElementById('nome').value.trim();
+            const cognome = document.getElementById('cognome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const citta = document.getElementById('citta').value.trim();
+            const nascita = document.getElementById('nascita').value.trim();
+            const esperienza = document.getElementById('esperienza').value;
+            const messaggio = document.getElementById('messaggio').value.trim();
+            const cv = document.getElementById('cv').value;
 
-            // Mostra messaggio di invio
+            const subject = encodeURIComponent('Nuova candidatura Lanterna Corporation');
+            const body = encodeURIComponent(
+                'Nuova candidatura ricevuta da Lanterna Corporation:\n\n' +
+                'Nome: ' + nome + '\n' +
+                'Cognome: ' + cognome + '\n' +
+                'Email: ' + email + '\n' +
+                'Telefono: ' + telefono + '\n' +
+                'Città: ' + citta + '\n' +
+                'Data di nascita: ' + nascita + '\n' +
+                'Esperienza: ' + esperienza + '\n\n' +
+                'Messaggio:\n' + messaggio + '\n\n' +
+                'CV allegato: ' + (cv ? cv : 'Nessun file selezionato')
+            );
+
             const messageEl = document.getElementById('formMessage');
             messageEl.textContent = 'Invio in corso...';
             messageEl.className = 'form-message loading';
 
-            // Invia l'email tramite EmailJS
-            emailjs.send('SERVICE_ID', 'TEMPLATE_ID', formData)
-                .then(function (response) {
-                    messageEl.textContent = '✓ Candidatura inviata con successo! Ti contatteremo presto.';
-                    messageEl.className = 'form-message success';
-                    document.getElementById('candidatiForm').reset();
-                    setTimeout(() => {
-                        messageEl.textContent = '';
-                    }, 5000);
-                }, function (error) {
-                    messageEl.textContent = '✗ Errore nell\'invio. Riprova più tardi.';
-                    messageEl.className = 'form-message error';
-                    console.error('Errore EmailJS:', error);
-                });
+            window.location.href = 'mailto:info@lanternacorporation.com?subject=' + subject + '&body=' + body;
+
+            setTimeout(() => {
+                messageEl.textContent = '✓ Email pronta: la tua candidatura è stata preparata per essere inviata a info@lanternacorporation.com.';
+                messageEl.className = 'form-message success';
+                form.reset();
+            }, 500);
         });
     </script>
 

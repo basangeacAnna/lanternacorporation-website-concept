@@ -17,8 +17,19 @@ body {
     /* Uno sfondo crema/sabbia chiarissimo e caldissimo */
     color: #00333d;
     /* Petrolio molto scuro per massima leggibilità del testo */
-    padding-top: 50px;
+    padding-top: 0;
     overflow-x: hidden;
+}
+
+section,
+.content-section,
+.about-minimal-section,
+.offriamo-section,
+.gallery-section,
+.contact-minimal-section,
+.candidati-form-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
 }
 
 .container {
@@ -62,10 +73,11 @@ h2 {
    2. NAVBAR FLUTTUANTE E PULITA
    ========================================================================== */
 .navbar {
-    position: fixed;
-    top: 5px;
-    left: 5%;
-    width: 90%;
+    position: sticky;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(94%, 1200px);
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.8);
     /* Bianco latte semitrasparente */
@@ -73,12 +85,12 @@ h2 {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(0, 102, 122, 0.08);
     border-radius: 24px;
-    padding: 5px 0;
     box-shadow: 0 10px 40px rgba(0, 66, 78, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 20px;
+    margin: 12px auto 0;
 }
 
 .nav-container {
@@ -177,7 +189,7 @@ h2 {
     align-items: center;
     background: radial-gradient(circle at 80% 20%, #f1edf7 0%, #fcfaf7 100%);
     /* Sfocatura di luce sullo sfondo */
-    padding: 40px 0;
+    padding: 48px 0 72px;
 }
 
 .hero-grid-layout {
@@ -370,7 +382,7 @@ h2 {
    GALLERY: CAROSELLO ORIZZONTALE AUTOMATICO E INFINITO
    ========================================================================== */
 .gallery-section {
-    padding: 100px 0 140px 0;
+    padding: 72px 0 100px 0;
     background-color: #fcfaf7; /* Mantiene lo sfondo caldo e accogliente */
     overflow: hidden; /* Fondamentale: nasconde le foto che escono dallo schermo */
 }
@@ -815,9 +827,9 @@ h2 {
    SEZIONE OWNER: LAYOUT AVVOLGENTE (IL TESTO VA SOTTO LA FOTO)
    ========================================================================== */
 .owner-section-fluid {
-    margin-top: 140px;
-    padding-top: 80px;
-    padding-bottom: 160px; 
+    margin-top: 80px;
+    padding-top: 72px;
+    padding-bottom: 120px; 
     border-top: 1px solid rgba(0, 102, 122, 0.1);
     text-align: left;
     position: relative;
@@ -939,7 +951,7 @@ h2 {
    SEZIONE CONTATTI: STILE INTERNAZIONALE MINIMALE
    ========================================================================== */
 .contact-minimal-section {
-    padding: 140px 0 0 0; /* Zero sotto perché si chiude con la mappa fluida */
+    padding: 72px 0 0 0; /* Zero sotto perché si chiude con la mappa fluida */
     background-color: #fcfaf7;
 }
 
