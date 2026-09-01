@@ -16,111 +16,127 @@
 
 <body>
 
-   <nav class="navbar">
-    <a href="index.html" class="nav-logo">Logo</a>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo-small">
+            <img src="assets/logoLanterna.png" alt="Lanterna Corporation Logo" class="logo-nav">
+        </a>
 
-    <!-- Il bottone hamburger che abbiamo inserito prima -->
-    <button class="hamburger" aria-label="Apri menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+        <!-- Il bottone hamburger per mobile -->
+        <button class="hamburger" aria-label="Apri menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <!-- ASSICURATI DI AVERE QUESTA CLASSE "nav-links" QUI SOTTO -->
-    <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="index.html#about-us">About us</a></li>
-        <li><a href="index.html#team">Staff</a></li>
-        <li><a href="index.html#gallery">Gallery</a></li>
-        <li><a href="index.html#contatti">Contatti</a></li>
-        <li><a href="candidati.html" class="candidati-btn">CANDIDATI ORA</a></li>
-    </ul>
-</nav>
+        <!-- Menu per desktop -->
+        <ul class="nav-links">
+            <li><a href="candidati.html" class="candidati-btn">CANDIDATI ORA</a></li>
+        </ul>
+    </nav>
 
-    <!-- SEZIONE CONTATTACI (candidatura) -->
-    <section id="candidatura" class="apply-section">
-        <div class="apply-container">
-
-            <div class="apply-quote">
-                <span class="apply-quote-line"></span>
-                <p class="apply-quote-text">Dove le persone fanno la differenza,<br>ogni giorno.</p>
-                <span class="apply-quote-line"></span>
+    <!-- SEZIONE FORM CANDIDATURA -->
+    <section class="candidati-form-section">
+        <div class="candidati-container">
+            <div class="form-header">
+                <h2>Invia la tua candidatura</h2>
+                <p>Compila il modulo e mandaci tutte le informazioni su di te. Esamineremo la tua candidatura e ti
+                    contatteremo al più presto!</p>
             </div>
 
-            <div class="apply-heading">
-                <h2>Vuoi iniziare <strong>anche tu</strong> un percorso di crescita?</h2>
-                <p>Compila il form e fatti conoscere dal Team. Ti aspettiamo!</p>
+            <div class="form-wrapper">
+                <form id="candidatiForm" class="candidati-form">
+
+                    <!-- ROW 1: Nome e Cognome -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="nome" name="nome" required placeholder=" ">
+                            <label for="nome">Nome (richiesto)</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" id="cognome" name="cognome" required placeholder=" ">
+                            <label for="cognome">Cognome (richiesto)</label>
+                        </div>
+                    </div>
+
+                    <!-- ROW 2: Email e Telefono -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Email (richiesto)</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="tel" id="telefono" name="telefono" required placeholder=" ">
+                            <label for="telefono">Telefono (richiesto)</label>
+                        </div>
+                    </div>
+
+                    <!-- ROW 3: Città e Data di nascita -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="citta" name="citta" required placeholder=" ">
+                            <label for="citta">Città (richiesto)</label>
+                        </div>
+                        <div class="form-field">
+                            <input type="date" id="nascita" name="nascita" required>
+                            <label for="nascita">Data di nascita (richiesto)</label>
+                        </div>
+                    </div>
+
+                    <!-- ROW 4: Lettera di presentazione -->
+                    <div class="form-field full-width">
+                        <textarea id="messaggio" name="messaggio" rows="6" placeholder=" " required></textarea>
+                        <label for="messaggio">Raccontaci di te e perché vuoi candidarti (richiesto)</label>
+                    </div>
+
+                    <!-- ROW 6: Allega il tuo CV -->
+                    <div class="form-field full-width">
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required placeholder=" ">
+                        <label for="cv">Allega il tuo CV (richiesto)</label>
+                    </div>
+
+                    <!-- ROW 7: Checkbox consenso -->
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="consenso" name="consenso" required>
+                        <label for="consenso">Accetto di essere contattato per questa opportunità di lavoro</label>
+                    </div>
+
+                    <!-- Bottone Invio -->
+                    <button type="submit" class="candidati-submit-btn">
+                        <span>Invia candidatura</span>
+                    </button>
+
+                    <!-- Messaggio di feedback -->
+                    <div id="formMessage" class="form-message"></div>
+
+                </form>
             </div>
-
-            <!-- Il form invia i dati (compreso il CV allegato) a info@lanternacorporation.com tramite Formspree -->
-            <form action="https://formspree.io/f/IL_TUO_ID_FORMSPREE" method="POST" enctype="multipart/form-data"
-                class="boxed-form">
-
-                <input type="hidden" name="_subject" value="Nuova candidatura dal sito Lanterna Corporation">
-
-                <div class="boxed-field">
-                    <label for="ap-name"><strong>Nome</strong> <span>(richiesto)</span></label>
-                    <input type="text" id="ap-name" name="nome" required>
-                </div>
-
-                <div class="boxed-field">
-                    <label for="ap-surname"><strong>Cognome</strong> <span>(richiesto)</span></label>
-                    <input type="text" id="ap-surname" name="cognome" required>
-                </div>
-
-                <div class="boxed-field">
-                    <label for="ap-email"><strong>Email</strong> <span>(richiesto)</span></label>
-                    <input type="email" id="ap-email" name="email" required>
-                </div>
-
-                <div class="boxed-field">
-                    <label for="ap-message"><strong>Messaggio</strong> <span>(richiesto)</span></label>
-                    <textarea id="ap-message" name="messaggio" rows="6" required></textarea>
-                </div>
-
-                <div class="boxed-field boxed-field-file">
-                    <label for="ap-cv"><strong>Curriculum Vitae</strong> <span>(richiesto, PDF)</span></label>
-                    <input type="file" id="ap-cv" name="cv" accept=".pdf,.doc,.docx" required>
-                </div>
-
-                <p class="apply-disclaimer">Inviando le tue informazioni, ci autorizzi a inviarti e-mail. Puoi
-                    annullare l’iscrizione in qualsiasi momento.</p>
-
-                <button type="submit" class="minimal-btn apply-submit-btn">
-                    <span>Invia</span>
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-
-            </form>
-
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="main-footer">
         <div class="footer-top-container">
 
             <!-- Colonna Sinistra: Logo e Social -->
-            <div class="footer-social-links">
-
+            <div class="footer-brand-side">
                 <div class="footer-logo-wrapper">
                     <img src="assets/logoLanterna.png" alt="Lanterna Corporation Logo" class="footer-logo-img">
                 </div>
 
-                <div>
+                <!-- Social Link -->
+                <div class="footer-social-links">
                     <!-- Instagram -->
                     <a href="https://www.instagram.com/lanternacorporation/" aria-label="Instagram">
                         <img src="assets/loghi/instagramLogoWhite.png" alt="Instagram" class="footer-social-icon">
                     </a>
-                    <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@lanterna.corporation?lang=it-IT" aria-label="TikTok">
-                        <img src="assets/loghi/tiktokLogoWhite.png" alt="TikTok" class="footer-social-icon">
-                    </a>
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/company/lanterna-corporation/" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/lanterna-corporation-srl/" aria-label="LinkedIn">
                         <img src="assets/loghi/linkedinLogoWhite.png" alt="LinkedIn" class="footer-social-icon">
+                    </a>
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@lanternacorporation" aria-label="TikTok">
+                        <img src="assets/loghi/tiktokLogoWhite.png" alt="TikTok" class="footer-social-icon">
                     </a>
                     <!-- WhatsApp -->
                     <a href="https://api.whatsapp.com/send/?phone=3534556641&text&type=phone_number&app_absent=0"
@@ -147,9 +163,8 @@
                 </div>
 
                 <nav class="footer-nav">
-                    <a href="index.html#home">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="index.html#about-us">About us</a>
-                    <a href="index.html#team">Staff</a>
                     <a href="index.html#gallery">Gallery</a>
                     <a href="index.html#contatti">Contatti</a>
                     <a href="candidati.html">Candidati</a>
@@ -170,24 +185,69 @@
         </div>
     </footer>
 
+    <!-- Script per gestire il menu mobile -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-    
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
         });
-    });
-</script>
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- Script per inviare il form via mailto all'indirizzo aziendale -->
+    <script type="text/javascript">
+        const form = document.getElementById('candidatiForm');
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const nome = document.getElementById('nome').value.trim();
+                const cognome = document.getElementById('cognome').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const telefono = document.getElementById('telefono').value.trim();
+                const citta = document.getElementById('citta').value.trim();
+                const nascita = document.getElementById('nascita').value.trim();
+                const messaggio = document.getElementById('messaggio').value.trim();
+                const cvFile = document.getElementById('cv').files[0];
+
+                const subject = encodeURIComponent('Nuova candidatura Lanterna Corporation');
+                const body = encodeURIComponent(
+                    'Nuova candidatura ricevuta da Lanterna Corporation:\n\n' +
+                    'Nome: ' + nome + '\n' +
+                    'Cognome: ' + cognome + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Telefono: ' + telefono + '\n' +
+                    'Città: ' + citta + '\n' +
+                    'Data di nascita: ' + nascita + '\n\n' +
+                    'Messaggio:\n' + messaggio + '\n\n' +
+                    'CV allegato: ' + (cvFile ? cvFile.name : 'Nessun file selezionato')
+                );
+
+                const messageEl = document.getElementById('formMessage');
+                messageEl.textContent = 'Invio in corso...';
+                messageEl.className = 'form-message loading';
+
+                window.location.href = 'mailto:info@lanternacorporation.com?subject=' + subject + '&body=' + body;
+
+                setTimeout(() => {
+                    messageEl.textContent = '✓ Email pronta: la tua candidatura è stata preparata per essere inviata a info@lanternacorporation.com.';
+                    messageEl.className = 'form-message success';
+                    form.reset();
+                }, 500);
+            });
+        }
+    </script>
+
 </body>
 
 </html>
