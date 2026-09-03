@@ -2348,3 +2348,20 @@ h2 {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+/* Impedisce al browser di trascinare nativamente l'immagine come file, bloccando lo script */
+.marquee-track img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.marquee-track {
+    display: flex;
+    cursor: grab;
+    will-change: transform;
+}
+
+.marquee-track.is-dragging {
+    cursor: grabbing;
+}
