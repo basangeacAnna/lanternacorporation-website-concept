@@ -317,12 +317,12 @@ h2 {
 
 /* BOTTONI EDITORIALI */
 .btn {
-    display: inline-block;
-    padding: 16px 32px;
+        display: inline-block;
+    padding: 16px 20px;
     border-radius: 16px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 20px;
     transition: all 0.2s ease;
 }
 
@@ -488,6 +488,7 @@ h2 {
     border-radius: 24px; /* Arrotondiamo un pelo di più gli angoli per adeguarli alla nuova grandezza */
     background-color: #f5f0eb;
     transition: transform 0.4s ease, filter 0.4s ease;
+    
 }
 
 /* Effetto micro-zoom quando ci passi sopra */
@@ -1006,9 +1007,9 @@ h2 {
 }
 
 .contact-info-side {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
-    gap: 80px;
     align-items: start;
 }
 
@@ -1093,31 +1094,31 @@ h2 {
 }
 
 .transport-metro {
-    border-left-color: #d91f26;
+    border-left-color: #E21512;
 }
 
 .transport-bus {
-    border-left-color: #008c45;
+    border-left-color: #58B454;
 }
 
 .transport-tram {
-    border-left-color: #f58220;
+    border-left-color: #F2812B;
 }
 
 .line-m1 strong {
-    color: #d91f26 !important;
+    color: #E21512 !important;
 }
 
 .line-m2 strong {
-    color: #008c45 !important;
+    color: #619236 !important;
 }
 
 .transport-bus p strong {
-    color: #008c45 !important;
+    color: #58B454 !important;
 }
 
 .transport-tram p strong {
-    color: #f58220 !important;
+    color: #F2812B !important;
 }
 
 .transport-type {
