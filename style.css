@@ -674,6 +674,15 @@ h2 {
 
 /* Fix responsive veloce per la griglia interna dei requisiti */
 @media (max-width: 768px) {
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .requirement-item {
+        min-width: 0;
+    }
+
     .requirements-box {
         padding: 30px 20px;
     }
