@@ -1002,8 +1002,14 @@ h2 {
     margin: 0 auto;
     padding: 0 24px;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr; /* Asimmetria: più spazio alle info */
-    gap: 90px;
+    grid-template-columns: 1fr;
+}
+
+.contact-info-side {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+    gap: 80px;
+    align-items: start;
 }
 
 /* Colonna Info */
@@ -1023,7 +1029,11 @@ h2 {
 .contact-lead-text {
     font-size: 1.35rem;
     color: #4c7c87;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+}
+
+.contact-apply-btn {
+    margin-bottom: 50px;
 }
 
 /* Trasporti */
@@ -1035,8 +1045,79 @@ h2 {
     letter-spacing: -0.5px;
 }
 
+.reach-us-block {
+    min-width: 0;
+}
+
+.reach-us-block h3 {
+    margin-bottom: 24px;
+}
+
+.reach-us-block {
+    grid-column: 2;
+}
+
+.contact-info-side > .about-kicker,
+.contact-info-side > .contact-giant-title,
+.contact-info-side > .contact-lead-text,
+.contact-info-side > .contact-apply-btn {
+    grid-column: 1;
+}
+
+.contact-info-side > .about-kicker {
+    grid-row: 1;
+}
+
+.contact-info-side > .contact-giant-title {
+    grid-row: 2;
+}
+
+.contact-info-side > .contact-lead-text {
+    grid-row: 3;
+}
+
+.contact-info-side > .contact-apply-btn {
+    grid-row: 4;
+}
+
+.contact-info-side > .reach-us-block {
+    grid-row: 1 / span 4;
+}
+
 .transport-group {
     margin-bottom: 25px;
+    padding: 18px 20px;
+    border-left: 4px solid #cbb49e;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 0 14px 14px 0;
+}
+
+.transport-metro {
+    border-left-color: #d91f26;
+}
+
+.transport-bus {
+    border-left-color: #008c45;
+}
+
+.transport-tram {
+    border-left-color: #f58220;
+}
+
+.line-m1 strong {
+    color: #d91f26 !important;
+}
+
+.line-m2 strong {
+    color: #008c45 !important;
+}
+
+.transport-bus p strong {
+    color: #008c45 !important;
+}
+
+.transport-tram p strong {
+    color: #f58220 !important;
 }
 
 .transport-type {
@@ -1249,6 +1330,21 @@ h2 {
         gap: 60px;
         margin-bottom: 60px;
     }
+
+    .contact-info-side {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info-side > .about-kicker,
+    .contact-info-side > .contact-giant-title,
+    .contact-info-side > .contact-lead-text,
+    .contact-info-side > .contact-apply-btn,
+    .contact-info-side > .reach-us-block {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
     .contact-giant-title { font-size: 2.6rem !important; }
     .map-overlay-card {
         left: 5%;
