@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-wrapper">
-                <form id="candidatiForm" class="candidati-form">
+                <form id="candidatiForm" class="candidati-form" enctype="multipart/form-data">
 
                     <!-- ROW 1: Nome e Cognome -->
                     <div class="form-row">
@@ -205,7 +205,7 @@
         });
     </script>
 
-    <!-- Script per inviare il form via mailto all'indirizzo aziendale -->
+    <!-- Script per l'invio automatico asincrono via PHP (senza mailto / Outlook) -->
     <script type="text/javascript">
         const form = document.getElementById('candidatiForm');
 
@@ -213,39 +213,30 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                const nome = document.getElementById('nome').value.trim();
-                const cognome = document.getElementById('cognome').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const telefono = document.getElementById('telefono').value.trim();
-                const citta = document.getElementById('citta').value.trim();
-                const nascita = document.getElementById('nascita').value.trim();
-                const messaggio = document.getElementById('messaggio').value.trim();
-                const cvFile = document.getElementById('cv').files[0];
-
-                const subject = encodeURIComponent('Nuova candidatura Lanterna Corporation');
-                const body = encodeURIComponent(
-                    'Nuova candidatura ricevuta da Lanterna Corporation:\n\n' +
-                    'Nome: ' + nome + '\n' +
-                    'Cognome: ' + cognome + '\n' +
-                    'Email: ' + email + '\n' +
-                    'Telefono: ' + telefono + '\n' +
-                    'Città: ' + citta + '\n' +
-                    'Data di nascita: ' + nascita + '\n\n' +
-                    'Messaggio:\n' + messaggio + '\n\n' +
-                    'CV allegato: ' + (cvFile ? cvFile.name : 'Nessun file selezionato')
-                );
-
                 const messageEl = document.getElementById('formMessage');
-                messageEl.textContent = 'Invio in corso...';
+                messageEl.textContent = 'Invio candidatura in corso...';
                 messageEl.className = 'form-message loading';
 
-                window.location.href = 'mailto:info@lanternacorporation.com?subject=' + subject + '&body=' + body;
+                const formData = new FormData(form);
 
-                setTimeout(() => {
-                    messageEl.textContent = '✓ Email pronta: la tua candidatura è stata preparata per essere inviata a info@lanternacorporation.com.';
-                    messageEl.className = 'form-message success';
-                    form.reset();
-                }, 500);
+                fetch('send-email.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        messageEl.textContent = '✓ Candidatura inviata con successo!';
+                        messageEl.className = 'form-message success';
+                        form.reset();
+                    } else {
+                        throw new Error('Errore nella risposta del server');
+                    }
+                })
+                .catch(error => {
+                    console.error('Errore:', error);
+                    messageEl.textContent = 'Si è verificato un errore durante l\'invio. Riprova più tardi.';
+                    messageEl.className = 'form-message error';
+                });
             });
         }
     </script>
