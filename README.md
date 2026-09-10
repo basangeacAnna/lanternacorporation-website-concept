@@ -1,6 +1,6 @@
-# Lanterna Corporation — Sito web
+# Lanterna Corporation — Sito web 🚀
 
-> *"Dove le persone fanno la differenza, ogni giorno."*
+> *"Dove le persone fanno la differenza, ogni giorno. ✨"*
 
 Sito vetrina e pagina di recruiting per **Lanterna Corporation**, società di direct marketing
 con sede a Milano che si occupa di fundraising e raccolta fondi per organizzazioni no profit.
