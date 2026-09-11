@@ -2647,11 +2647,13 @@ h2 {
     .cookie-banner-content {
         flex-direction: column;
         align-items: stretch;
+        justify-content: flex-start;
         text-align: center;
         gap: 10px;
     }
 
     .cookie-banner-text {
+        flex: 0 1 auto;
         font-size: 0.82rem;
         line-height: 1.4;
     }
