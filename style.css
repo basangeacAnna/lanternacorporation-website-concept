@@ -2639,13 +2639,34 @@ h2 {
 }
 
 @media (max-width: 600px) {
+    .cookie-banner {
+        padding: 14px 16px;
+        padding-bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
     .cookie-banner-content {
         flex-direction: column;
         align-items: stretch;
         text-align: center;
+        gap: 10px;
+    }
+
+    .cookie-banner-text {
+        font-size: 0.82rem;
+        line-height: 1.4;
     }
 
     .cookie-banner-actions {
         justify-content: center;
+        gap: 14px;
+    }
+
+    .cookie-btn-more {
+        font-size: 0.82rem;
+    }
+
+    .cookie-btn-accept {
+        padding: 8px 22px;
+        font-size: 0.85rem;
     }
 }

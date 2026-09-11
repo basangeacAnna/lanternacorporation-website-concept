@@ -245,13 +245,15 @@
                     method: 'POST',
                     body: formData
                 })
-                .then(response => {
-                    if (response.ok) {
+                .then(response => response.text().then(text => ({ ok: response.ok, text })))
+                .then(({ ok, text }) => {
+                    if (ok) {
                         messageEl.textContent = '✓ Candidatura inviata con successo!';
                         messageEl.className = 'form-message success';
                         form.reset();
                     } else {
-                        throw new Error('Errore nella risposta del server');
+                        messageEl.textContent = text || 'Si è verificato un errore durante l\'invio. Riprova più tardi.';
+                        messageEl.className = 'form-message error';
                     }
                 })
                 .catch(error => {
