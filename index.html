@@ -17,6 +17,18 @@
 
 <body>
 
+    <!-- BANNER COOKIE -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Informativa sui cookie">
+        <div class="cookie-banner-content">
+            <p class="cookie-banner-text">Questo sito utilizza cookie di terze parti (Google Maps) per migliorare
+                l'esperienza.</p>
+            <div class="cookie-banner-actions">
+                <a href="cookie.html" class="cookie-btn-more">Scopri di più</a>
+                <button id="cookieAcceptBtn" class="cookie-btn-accept" type="button">Accetta</button>
+            </div>
+        </div>
+    </div>
+
    <nav class="navbar">
     <a href="index.html" class="nav-logo-small" aria-label="Vai alla home page">
         <img src="assets/loghi/logoLanterna.png" alt="Lanterna Corporation Logo" class="logo-nav">
@@ -417,6 +429,8 @@
                     <a href="#gallery">Gallery</a>
                     <a href="#contatti">Contatti</a>
                     <a href="candidati.html">Candidati</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
                 </nav>
             </div>
 
@@ -508,6 +522,41 @@ scrollToTopBtn.addEventListener('click', () => {
     });
 });
 
+</script>
+
+<!-- Script per il banner cookie -->
+<script>
+    (function () {
+        const COOKIE_CONSENT_KEY = 'lanternaCookieConsent';
+        const banner = document.getElementById('cookieBanner');
+        const acceptBtn = document.getElementById('cookieAcceptBtn');
+
+        if (!banner) return;
+
+        let hasConsent = false;
+        try {
+            hasConsent = localStorage.getItem(COOKIE_CONSENT_KEY) === 'accepted';
+        } catch (e) {
+            hasConsent = false;
+        }
+
+        if (!hasConsent) {
+            window.setTimeout(() => {
+                banner.classList.add('cookie-banner-show');
+            }, 400);
+        }
+
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                try {
+                    localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+                } catch (e) {
+                    /* localStorage non disponibile: il banner verrà mostrato nuovamente */
+                }
+                banner.classList.remove('cookie-banner-show');
+            });
+        }
+    })();
 </script>
 </body>
 

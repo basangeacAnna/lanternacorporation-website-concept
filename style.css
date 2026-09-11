@@ -2133,6 +2133,12 @@ h2 {
     top: 0;
 }
 
+.form-checkbox label a {
+    color: #00667a;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .candidati-submit-btn {
     align-self: flex-start;
     display: inline-flex;
@@ -2473,4 +2479,173 @@ h2 {
     transform-origin: bottom;
     /* La scala Y parte da 1 (piena) e scende a 0 (vuota) */
     transform: scaleY(var(--fill-level, 1));
+}
+
+/* ==========================================================================
+   PAGINA PRIVACY POLICY
+   ========================================================================== */
+.privacy-policy-section {
+    padding: 100px 0;
+    background-color: #fcfaf7;
+}
+
+.privacy-policy-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.privacy-policy-card {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 102, 122, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 66, 78, 0.03);
+}
+
+.privacy-policy-card h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #00667a;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.privacy-policy-updated {
+    color: #4c7c87;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.privacy-policy-card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    color: #00667a;
+    line-height: 1.3;
+    margin-top: 40px;
+    margin-bottom: 14px;
+}
+
+.privacy-policy-card p {
+    color: #00333d;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.privacy-policy-card ul {
+    margin: 0 0 14px 0;
+    padding-left: 22px;
+    color: #00333d;
+    line-height: 1.7;
+}
+
+.privacy-policy-card li {
+    margin-bottom: 8px;
+}
+
+.privacy-policy-card a {
+    color: #00667a;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .privacy-policy-card {
+        padding: 36px 24px;
+        border-radius: 24px;
+    }
+
+    .privacy-policy-card h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   BANNER COOKIE
+   ========================================================================== */
+.cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    background-color: #00333d;
+    color: #ffffff;
+    padding: 18px 24px;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(110%);
+    transition: transform 0.4s ease;
+}
+
+.cookie-banner.cookie-banner-show {
+    transform: translateY(0);
+}
+
+.cookie-banner-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cookie-banner-text {
+    flex: 1 1 320px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #ffffff;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.cookie-btn-more {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.cookie-btn-more:hover {
+    opacity: 0.75;
+}
+
+.cookie-btn-accept {
+    background-color: #00667a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cookie-btn-accept:hover {
+    background-color: #00485a;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .cookie-banner-content {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .cookie-banner-actions {
+        justify-content: center;
+    }
 }

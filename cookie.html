@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candidati - Lanterna Corporation</title>
+    <title>Cookie Policy - Lanterna Corporation</title>
     <!-- Font moderno da Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <a href="index.html" class="nav-logo-small">
+        <a href="index.html" class="nav-logo-small" aria-label="Vai alla home page">
             <img src="assets/loghi/logoLanterna.png" alt="Lanterna Corporation Logo" class="logo-nav">
         </a>
 
@@ -49,89 +49,92 @@
         </ul>
     </nav>
 
-    <!-- SEZIONE FORM CANDIDATURA -->
-    <section class="candidati-form-section">
-        <div class="candidati-container">
-            <div class="form-header">
-                <h2>Invia la tua candidatura</h2>
-                <p>Compila il modulo e mandaci tutte le informazioni su di te. Esamineremo la tua candidatura e ti
-                    contatteremo al più presto!</p>
-            </div>
+    <!-- SEZIONE COOKIE POLICY -->
+    <section class="privacy-policy-section">
+        <div class="privacy-policy-container">
+            <div class="privacy-policy-card">
+                <h1>Cookie Policy</h1>
+                <p class="privacy-policy-updated">Ultimo aggiornamento: 11 settembre 2026</p>
 
-            <div class="form-wrapper">
-                <form id="candidatiForm" class="candidati-form" enctype="multipart/form-data">
+                <p>La presente Cookie Policy descrive le tipologie di cookie e strumenti di tracciamento simili
+                    utilizzati dal sito web di Lanterna Corporation Srls e spiega come gestirli, in conformità al
+                    Regolamento (UE) 2016/679 ("GDPR") e alla normativa italiana in materia (Provvedimento
+                    "Cookie" del Garante Privacy).</p>
 
-                    <!-- ROW 1: Nome e Cognome -->
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input type="text" id="nome" name="nome" required placeholder=" ">
-                            <label for="nome">Nome (richiesto)</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="text" id="cognome" name="cognome" required placeholder=" ">
-                            <label for="cognome">Cognome (richiesto)</label>
-                        </div>
-                    </div>
+                <h2>1. Cosa sono i cookie</h2>
+                <p>I cookie sono piccoli file di testo che i siti visitati inviano e salvano sul dispositivo
+                    dell'utente, per essere poi ritrasmessi agli stessi siti alla visita successiva. Possono
+                    essere installati direttamente dal sito visitato ("cookie di prima parte") oppure da siti o
+                    web server diversi ("cookie di terze parti"), i cui elementi risiedono nella pagina che si sta
+                    visitando (ad esempio mappe interattive).</p>
 
-                    <!-- ROW 2: Email e Telefono -->
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input type="email" id="email" name="email" required placeholder=" ">
-                            <label for="email">Email (richiesto)</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="tel" id="telefono" name="telefono" required placeholder=" ">
-                            <label for="telefono">Telefono (richiesto)</label>
-                        </div>
-                    </div>
+                <h2>2. Cookie tecnici necessari</h2>
+                <p>Il sito utilizza esclusivamente uno strumento di memorizzazione locale (localStorage) per
+                    ricordare la scelta espressa nel banner cookie, così da non ripresentarlo ad ogni visita. Non
+                    si tratta di un cookie in senso stretto e non viene utilizzato per finalità di profilazione:
+                    resta memorizzato solo sul dispositivo dell'utente e può essere cancellato in qualsiasi
+                    momento tramite le impostazioni del browser.</p>
 
-                    <!-- ROW 3: Città e Data di nascita -->
-                    <div class="form-row">
-                        <div class="form-field">
-                            <input type="text" id="citta" name="citta" required placeholder=" ">
-                            <label for="citta">Città (richiesto)</label>
-                        </div>
-                        <div class="form-field">
-                            <input type="date" id="nascita" name="nascita" required>
-                            <label for="nascita">Data di nascita (richiesto)</label>
-                        </div>
-                    </div>
+                <h2>3. Cookie di terze parti: Google Maps</h2>
+                <p>Nella pagina Contatti il sito integra una mappa interattiva fornita da Google Maps, tramite un
+                    elemento "iframe" incorporato. Il caricamento di questo componente consente a Google di
+                    impostare propri cookie di terze parti sul dispositivo dell'utente e di raccogliere dati
+                    relativi alla navigazione, secondo modalità e finalità stabilite autonomamente da Google in
+                    qualità di titolare autonomo del trattamento. Per maggiori informazioni si rimanda
+                    all'informativa privacy di Google, disponibile all'indirizzo
+                    <a href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
 
-                    <!-- ROW 4: Lettera di presentazione -->
-                    <div class="form-field full-width">
-                        <textarea id="messaggio" name="messaggio" rows="6" placeholder=" " required></textarea>
-                        <label for="messaggio">Raccontaci di te e perché vuoi candidarti (richiesto)</label>
-                    </div>
+                <h2>4. Google Fonts</h2>
+                <p>Per la visualizzazione dei caratteri tipografici del sito viene richiamato il servizio Google
+                    Fonts, che comporta una connessione ai server di Google per il download dei font. Google
+                    dichiara di non utilizzare tali richieste per finalità pubblicitarie e di non impostare
+                    cookie di profilazione tramite questo servizio; resta comunque un trasferimento tecnico di
+                    dati (ad esempio l'indirizzo IP) verso i server Google, disciplinato dall'informativa privacy
+                    di Google sopra indicata.</p>
 
-                    <!-- ROW 6: Allega il tuo CV -->
-                    <div class="form-field full-width">
-                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required placeholder=" ">
-                        <label for="cv">Allega il tuo CV (richiesto)</label>
-                    </div>
+                <h2>5. Altri servizi e link a piattaforme esterne</h2>
+                <p>Il sito contiene link che rimandano a piattaforme e servizi esterni (Instagram, LinkedIn,
+                    TikTok, WhatsApp, Google Search). Il semplice collegamento ipertestuale non installa cookie di
+                    terze parti sul dispositivo dell'utente: eventuali cookie vengono impostati solo qualora
+                    l'utente decida volontariamente di visitare tali piattaforme, che restano autonome titolari
+                    del trattamento dei dati raccolti al loro interno.</p>
 
-                    <!-- ROW 7: Checkbox consenso -->
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="consenso" name="consenso" required>
-                        <label for="consenso">Accetto di essere contattato per questa opportunità di lavoro</label>
-                    </div>
+                <h2>6. Base giuridica e consenso</h2>
+                <p>I cookie tecnici non richiedono consenso preventivo. Per i cookie di terze parti descritti al
+                    punto 3, il caricamento del componente Google Maps avviene con il consenso espresso
+                    dall'utente tramite il banner presente su tutte le pagine del sito; l'utente può in qualsiasi
+                    momento modificare la propria scelta cancellando i dati di navigazione del browser (vedi
+                    punto successivo).</p>
 
-                    <!-- ROW 8: Checkbox consenso privacy -->
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="consensoPrivacy" name="consensoPrivacy" required>
-                        <label for="consensoPrivacy">Ho letto l'<a href="privacy-policy.html" target="_blank"
-                                rel="noopener">informativa privacy</a> e acconsento al trattamento dei miei dati
-                            personali per finalità di selezione del personale.</label>
-                    </div>
+                <h2>7. Come gestire e disabilitare i cookie</h2>
+                <p>L'utente può gestire le proprie preferenze sui cookie direttamente dal proprio browser,
+                    eliminando i cookie già installati e impostando il blocco di quelli futuri. Di seguito i link
+                    alle guide dei principali browser:</p>
+                <ul>
+                    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank"
+                            rel="noopener noreferrer">Google Chrome</a></li>
+                    <li><a href="https://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie"
+                            target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+                    <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank"
+                            rel="noopener noreferrer">Apple Safari</a></li>
+                    <li><a href="https://support.microsoft.com/it-it/microsoft-edge" target="_blank"
+                            rel="noopener noreferrer">Microsoft Edge</a></li>
+                </ul>
+                <p>La disabilitazione dei cookie di terze parti può impedire la corretta visualizzazione della
+                    mappa Google Maps, senza tuttavia compromettere la fruizione delle altre parti del sito.</p>
 
-                    <!-- Bottone Invio -->
-                    <button type="submit" class="candidati-submit-btn">
-                        <span>Invia candidatura</span>
-                    </button>
+                <h2>8. Titolare del trattamento</h2>
+                <p>
+                    Lanterna Corporation Srls<br>
+                    Via Gaetano Moroni 16, 00162 Roma<br>
+                    PEC: <a href="mailto:lanternacorporation@pec.it">lanternacorporation@pec.it</a>
+                </p>
 
-                    <!-- Messaggio di feedback -->
-                    <div id="formMessage" class="form-message"></div>
-
-                </form>
+                <h2>9. Ulteriori informazioni</h2>
+                <p>Per informazioni relative al trattamento dei dati personali raccolti tramite i moduli di
+                    contatto e candidatura del sito, si rimanda alla <a href="privacy-policy.html">Privacy
+                        Policy</a>.</p>
             </div>
         </div>
     </section>
@@ -225,42 +228,6 @@
                 navLinks.classList.remove('active');
             });
         });
-    </script>
-
-    <!-- Script per l'invio automatico asincrono via PHP (senza mailto / Outlook) -->
-    <script type="text/javascript">
-        const form = document.getElementById('candidatiForm');
-
-        if (form) {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const messageEl = document.getElementById('formMessage');
-                messageEl.textContent = 'Invio candidatura in corso...';
-                messageEl.className = 'form-message loading';
-
-                const formData = new FormData(form);
-
-                fetch('send-email.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    if (response.ok) {
-                        messageEl.textContent = '✓ Candidatura inviata con successo!';
-                        messageEl.className = 'form-message success';
-                        form.reset();
-                    } else {
-                        throw new Error('Errore nella risposta del server');
-                    }
-                })
-                .catch(error => {
-                    console.error('Errore:', error);
-                    messageEl.textContent = 'Si è verificato un errore durante l\'invio. Riprova più tardi.';
-                    messageEl.className = 'form-message error';
-                });
-            });
-        }
     </script>
 
     <!-- Script per il banner cookie -->
