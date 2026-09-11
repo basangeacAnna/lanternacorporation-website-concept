@@ -19,7 +19,9 @@ Design e sviluppo sono miei (Anna Maria Basangeac). Logo e marchi sono di Lanter
 - **Landing page single-page** (`index.html`) con sezioni Home, About, Cosa offriamo, Team,
   Gallery e Contatti, navigazione con scroll fluido e ancore.
 - **Pagina candidature** (`candidati.html`) con form completo: dati anagrafici, lettera di
-  presentazione, upload del CV e consenso al contatto.
+  presentazione, upload del CV e consenso al contatto e al trattamento dati.
+- **Cookie Policy** (`cookie.html`) e **Privacy Policy** (`privacy-policy.html`), con banner
+  di consenso cookie richiamabile da entrambe le pagine principali del sito.
 - **Backend PHP** (`send-email.php`) che riceve la candidatura, la valida lato server e la
   inoltra via email con il CV in allegato.
 
@@ -29,8 +31,11 @@ Design e sviluppo sono miei (Anna Maria Basangeac). Logo e marchi sono di Lanter
 - **Gallery a carosello infinito** (marquee CSS) con le foto del team.
 - **Pulsante "torna su"** con animazione custom in SVG: una tazzina di caffè che si svuota
   mentre scendi nella pagina e si riempie mentre risali.
+- **Banner cookie** a comparsa (con leggero ritardo), che ricorda la scelta dell'utente in
+  `localStorage` e rimanda alla Cookie Policy per i dettagli.
 - **Form di candidatura asincrono**: invio via `fetch` senza ricaricare la pagina, con stati
-  di caricamento, successo ed errore.
+  di caricamento, successo ed errore, checkbox di consenso al contatto e di accettazione
+  della privacy policy.
 - **Validazione server-side**: campi obbligatori, formato email, protezione da *header
   injection*, controllo di estensione (`pdf`, `doc`, `docx`) e dimensione (max 8 MB) del CV.
 - Invio email in `multipart/mixed` con allegato in base64 e mittente configurato per non
@@ -53,6 +58,8 @@ Design e sviluppo sono miei (Anna Maria Basangeac). Logo e marchi sono di Lanter
 .
 ├── index.html          # Landing page
 ├── candidati.html      # Form di candidatura
+├── cookie.html          # Cookie Policy
+├── privacy-policy.html  # Privacy Policy
 ├── send-email.php      # Endpoint per la ricezione delle candidature
 ├── style.css           # Foglio di stile unico
 ├── assets/
